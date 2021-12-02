@@ -27,8 +27,8 @@ int main(void){
 	int op, reg;
 
 do{
-	puts("¿Que datos deseas registrar?");
-	puts("1.-\'Profesorado\'");
+	puts("Â¿QuÃ© datos deseas registrar?");
+	puts("1.-Profesorado");
 	puts("2.-Alumnado");
 	puts("3.-Salir");
 	printf("Ingrese la opcion [1 2 3] :");
@@ -36,11 +36,11 @@ do{
 	scanf("%i", &op);
 	if(op == 1){
 		getchar();
-		puts("¿Cuántos registros deseas ingresar?");
+		puts("Â¿CuÃ¡ntos registros deseas ingresar?");
 		scanf("%i", &reg);
 		for (int i=0; i<reg; i++){
 			puts("--------------------------");
-			printf("\n\"Numero de empleado:\"");
+			printf("\n\"NÃºmero de empleado:\"");
 			fflush(stdin);
 			fgets(profesor[i].numeroEmpleado,13,stdin);
 			printf("Nombre: ");
@@ -52,11 +52,10 @@ do{
 			printf("Apellido Materno: ");
 			fflush(stdin);
 			fgets(profesor[i].datos_profesor.apMaterno, 25, stdin);
-		//printf("\n\tID: %s \tNombre:%s\tApellido Paterno: %s\tApellido Materno: %s", profesor.numeroEmpleado, profesor.datos_profesor.nombre, profesor.datos_profesor.apPaterno, profesor.datos_profesor.apMaterno);
 		} //Fin de For
 	}else if(op == 2){
 		getchar();
-		printf("Numero de cuenta del estudiante: ");
+		printf("NÃºmero de cuenta del estudiante: ");
 		fflush(stdin);
 		fgets(estudiante.numeroCuenta,13,stdin);
 				printf("Promedio: ");
@@ -71,11 +70,18 @@ do{
 		printf("Apellido Materno: ");
 		fflush(stdin);
 		fgets(estudiante.datos_estudiante.apMaterno, 25, stdin);
-		printf("\n\tID: %s \n\tpromedio: %s \n\tNombre:%s\n\tApellido Paterno: %s\n\tApellido Materno: %s", estudiante.numeroCuenta, estudiante.promedio, estudiante.datos_estudiante.nombre, estudiante.datos_estudiante.apPaterno, estudiante.datos_estudiante.apMaterno);   
+		//Se debe imprimir fuera del ciclo for y como un arreglo 
+		//printf("\n\tID: %s \n\tpromedio: %s \n\tNombre:%s\n\tApellido Paterno: %s\n\tApellido Materno: %s", estudiante.numeroCuenta, estudiante.promedio, estudiante.datos_estudiante.nombre, estudiante.datos_estudiante.apPaterno, estudiante.datos_estudiante.apMaterno);   
 	}else{
-		printf("Dame una opción válida");
+		printf("Dame una opciÃ³n vÃ¡lida");
 	}
 }while (op != 3);
+	puts("---------------------------");
+	for (int i=0; i<reg; i++){
+		printf("\n\tID: %s \tNombre:%s\tApellido Paterno: %s\tApellido Materno: %s", profesor[i].numeroEmpleado, profesor[i].datos_profesor.nombre, profesor[i].datos_profesor.apPaterno, profesor[i].datos_profesor.apMaterno);
+		
+	}
+	puts("---------------------------");
 	puts("Que tenga buen dia, vuelva pronto");
 	}
 
